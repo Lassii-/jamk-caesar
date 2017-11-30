@@ -5,10 +5,10 @@ Salaa tekstiä [Caesarin salakirjoituksella](https://fi.wikipedia.org/wiki/Caesa
 ## Käyttö
 Ohjelma on suunniteltu käytettäväksi komentoriviltä. Komentorivisyötteenä tulee antaa numero väliltä 1-26, joka toimii salausavaimena. Ohjelman käynnistyttyä syötetään teksti, joka halutaan salataan.
 >./caesarwin.exe 3
-Alkuperäinen teksti: ABC
-Salattu teksti: DEF
-Kirjoitetaan sanapari tiedostoon...
-Kirjoitus valmis.
+> Alkuperäinen teksti: ABC
+> Salattu teksti: DEF
+> Kirjoitetaan sanapari tiedostoon...
+> Kirjoitus valmis.
 ## TODO
 * Mahdollisuus olla tallentamatta salauspareja tekstitiedostoon.
 * Koodin kommentointi.
