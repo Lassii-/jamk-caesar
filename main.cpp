@@ -32,17 +32,17 @@ int argChecker(int countOfArgc, char *valueofArgv)
     if(countOfArgc < 2)
     {
         cout << "Komentoriviargumentti puuttuu!" << endl;
-        exit(1);
+        return(1);
     }
     else if(countOfArgc > 2)
     {
         cout << "Komentoriviargumentteja on liikaa! " << "Anna ainoastaan numero väliltä 1-26." << endl;
-        exit(1);
+        return(1);
     }
     if(argvToInt <=0 || argvToInt > 26)
     {
         cout << "Anna ainoastaan numero väliltä 1-26!" << endl;
-        exit(1);
+        return(1);
     }
     return argvToInt;
 }
@@ -81,10 +81,10 @@ string caesarCipher(int key, string plainText)
 void savetoFile(string plain, int key, string ciphered)
 {
 	ofstream outfile;
-	outfile.open("sanaparit.txt", std::ios_base::app);
+	outfile.open("sanaparit.txt", ios_base::app);
 	
 	cout << "Kirjoitetaan sanapari tiedostoon..." << endl;
 	outfile << plain << " + " << key << " = " << ciphered << endl;
-	cout << "Kirjoitus valmis" << endl;
+	cout << "Kirjoitus valmis." << endl;
 	outfile.close();
 }
