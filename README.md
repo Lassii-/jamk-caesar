@@ -5,9 +5,9 @@ Salaa tekstiä [Caesarin salakirjoituksella](https://fi.wikipedia.org/wiki/Caesa
 ## Käyttö
 Ohjelma on suunniteltu käytettäväksi komentoriviltä. Komentorivisyötteenä tulee antaa numero väliltä 1-26, joka toimii salausavaimena. Ohjelman käynnistyttyä syötetään teksti, joka halutaan salataan.
 ~~~~
-./caesarwin.exe 3
-Alkuperäinen teksti: ABC
-Salattu teksti: DEF
+./caesarwin.exe 16
+Alkuperäinen teksti: Laitumella seisoo hevonen.
+Salattu teksti: Bqyjkcubbq iuyiee xuledud.
 Kirjoitetaan sanapari tiedostoon...
 Kirjoitus valmis.
 ~~~~
