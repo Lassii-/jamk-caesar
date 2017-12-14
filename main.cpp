@@ -5,7 +5,7 @@
 using namespace std;
 
 int argChecker(int countOfArgc, char *valueofArgv);
-string caesarCipher(int key, string plainText);
+string cipherText(int key, string plainText);
 void savetoFile(string plain, int key, string ciphered);
 
 int main(int argc, char **argv) {
@@ -14,15 +14,19 @@ int main(int argc, char **argv) {
         cout << "Komentoriviargumentti puuttuu. Anna luku väliltä 1-26." << endl;
         return(1);
     }
-    const int key = argChecker(argc, argv[1]);
-    string plainText;
+    struct caesar {
+        int key;
+        string text;
+    } cliInput, plain, ciphered;
+    
+    cliInput.key = argChecker(argc, argv[1]);
     cout << "Alkuperäinen teksti: ";
-    getline (cin, plainText);
+    getline (cin, plain.text);
     cout << "Salattu teksti: ";
-    string cipheredText = caesarCipher(key, plainText);
-    cout << cipheredText;
+    ciphered.text = cipherText(cliInput.key, plain.text);
+    cout << ciphered.text;
     cout << endl;
-	savetoFile(plainText, key, cipheredText);
+	savetoFile(plain.text, cliInput.key, ciphered.text);
     return(0);
 }
 
@@ -47,7 +51,7 @@ int argChecker(int countOfArgc, char *valueofArgv)
     return argvToInt;
 }
 
-string caesarCipher(int key, string plainText)
+string cipherText(int key, string plainText)
 {
     string ciphered;
     for(auto c : plainText)
