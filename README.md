@@ -15,5 +15,4 @@ Kirjoitus valmis.
 * Ohjelma ei toistaiseksi tue kuin A-Z/a-z aakkosia.
 ## TODO
 * Mahdollisuus olla tallentamatta salauspareja tekstitiedostoon.
-* Koodin kommentointi.
 * Virheenkäsittely tiedostonkäsittelyyn (Jos ei oikeuksia kansioon jne.).
