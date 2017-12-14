@@ -5,9 +5,9 @@
 using namespace std;
 
 // Prototyypataan muuttujat
-int argChecker(int countOfArgc, char *valueofArgv);
-string cipherText(int key, string plainText);
-void savetoFile(string plain, int key, string ciphered);
+int argChecker(int& countOfArgc, char *valueofArgv);
+string cipherText(int& key, string& plainText);
+void savetoFile(string& plain, int& key, string& ciphered);
 
 int main(int argc, char **argv) {
     // Estetään segfault jossei komentoriviargumenttia ole annettu
@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
  * @param valueofArgv Ensimmäisen komentorivi-argumentin arvo
  * @return Komentorivi-argumentti kokonaislukuna
  */
-int argChecker(int countOfArgc, char *valueofArgv)
+int argChecker(int& countOfArgc, char *valueofArgv)
 {
     // Muutetaan komentorivisyöte string-tyypistä kokonaisluvuksi
     int argvToInt = atoi(valueofArgv);
@@ -65,7 +65,7 @@ int argChecker(int countOfArgc, char *valueofArgv)
  * @param plainText Selkokielinen sana/lause, joka halutaan salata
  * @return Palauttaa string-tyypin muuttujan, jossa salattu versio sanasta
  */
-string cipherText(int key, string plainText)
+string cipherText(int& key, string& plainText)
 {
     string ciphered;
     // Käydään salaamaton sana läpi
@@ -109,7 +109,7 @@ string cipherText(int key, string plainText)
  * @param key Salausavain
  * @param ciphered Salattu teksti
  */
-void savetoFile(string plainText, int key, string ciphered)
+void savetoFile(string& plainText, int& key, string& ciphered)
 {
     // Luodaan outputstream-objekti outfile
 	ofstream outfile;
