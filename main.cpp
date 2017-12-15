@@ -30,7 +30,6 @@ int main(int argc, char **argv) {
     {
         saveFlag = *argv[2];
     }
-    cout << saveFlag;
     // caesar-tietue salaamattoman & salatun sanan sekä salausavaimen säilytykseen
     salaus.key = argChecker(argc, argv[1]);
     cout << "Alkuperäinen teksti: ";
