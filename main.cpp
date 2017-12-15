@@ -20,16 +20,16 @@ int main(int argc, char **argv) {
     struct caesar {
         int key;
         string text;
-    } cliInput, plain, ciphered;
+    } salaus, plain, ciphered;
     
-    cliInput.key = argChecker(argc, argv[1]);
+    salaus.key = argChecker(argc, argv[1]);
     cout << "Alkuperäinen teksti: ";
     getline (cin, plain.text);
     cout << "Salattu teksti: ";
-    ciphered.text = cipherText(cliInput.key, plain.text);
+    ciphered.text = cipherText(salaus.key, plain.text);
     cout << ciphered.text;
     cout << endl;
-	savetoFile(plain.text, cliInput.key, ciphered.text);
+	savetoFile(plain.text, salaus.key, ciphered.text);
     return(0);
 }
 /**
@@ -45,17 +45,17 @@ int argChecker(int& countOfArgc, char *valueofArgv)
     if(countOfArgc < 2)
     {
         cout << "Komentoriviargumentti puuttuu!" << endl;
-        return(1);
+        exit(1);
     }
     else if(countOfArgc > 2)
     {
         cout << "Komentoriviargumentteja on liikaa! " << "Anna ainoastaan numero väliltä 1-26." << endl;
-        return(1);
+        exit(1);
     }
     if(argvToInt <=0 || argvToInt > 26)
     {
         cout << "Anna ainoastaan numero väliltä 1-26!" << endl;
-        return(1);
+        exit(1);
     }
     return argvToInt;
 }
