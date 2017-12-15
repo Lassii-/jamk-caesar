@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Prototyypataan muuttujat
+// Prototyypataan funktiot
 int argChecker(int& countOfArgc, char *valueofArgv);
 string cipherText(int& key, string& plainText);
 void savetoFile(string& plain, int& key, string& ciphered);
