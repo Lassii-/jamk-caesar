@@ -14,5 +14,4 @@ Kirjoitus valmis.
 ## Rajoitukset
 * Ohjelma ei toistaiseksi tue kuin A-Z/a-z aakkosia.
 ## TODO
-* Mahdollisuus olla tallentamatta salauspareja tekstitiedostoon.
 * Virheenkäsittely tiedostonkäsittelyyn (Jos ei oikeuksia kansioon jne.).
