@@ -38,7 +38,10 @@ int main(int argc, char **argv) {
     ciphered.text = cipherText(salaus.key, plain.text);
     cout << ciphered.text;
     cout << endl;
-	savetoFile(plain.text, salaus.key, ciphered.text, saveFlag);
+    if(saveFlag == 'Y')
+    {
+        savetoFile(plain.text, salaus.key, ciphered.text, saveFlag);
+    }
     return(0);
 }
 /**
@@ -120,17 +123,22 @@ string cipherText(unsigned int& key, string& plainText)
  */
 void savetoFile(string& plainText, unsigned int& key, string& ciphered, char& saveFlag)
 {
-    if(saveFlag == 'Y')
-    {
         // Luodaan outputstream-objekti outfile
         ofstream outfile;
-        // Avataan sanaparit.txt-tiedosto append-tilassa, jolloin tallennettu tieto menee aina uudelle omalle rivilleen.
-        outfile.open("sanaparit.txt", ios_base::app);
+        outfile.exceptions(ofstream::failbit | ofstream::badbit);
+        try 
+        {
+            // Avataan sanaparit.txt-tiedosto append-tilassa, jolloin tallennettu tieto menee aina uudelle omalle rivilleen.
+            outfile.open("sanaparit.txt", ios_base::app);
 
-        // Kirjoitetaan tieto tiedostoon ja suljetaan tiedosto
-        cout << "Kirjoitetaan sanapari tiedostoon..." << endl;
-        outfile << plainText << " + " << key << " = " << ciphered << endl;
-        cout << "Kirjoitus valmis." << endl;
-        outfile.close();
-    }
+            // Kirjoitetaan tieto tiedostoon ja suljetaan tiedosto
+            cout << "Kirjoitetaan sanapari tiedostoon..." << endl;
+            outfile << plainText << " + " << key << " = " << ciphered << endl;
+            cout << "Kirjoitus valmis." << endl;
+            outfile.close();
+        }
+        catch (ofstream::failure e)
+        {
+            cerr << "Tiedoston tallennuksessa tapahtui virhe!\nVarmista, että sinulla on kirjoitusoikeudet hakemistoon, josta ohjelmistoa ajetaan." << endl;
+        }
 }
