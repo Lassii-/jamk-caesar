@@ -14,4 +14,4 @@ Kirjoitus valmis.
 ## Rajoitukset
 * Ohjelma ei toistaiseksi tue kuin A-Z/a-z aakkosia.
 ## TODO
-* Virheenkäsittely tiedostonkäsittelyyn (Jos ei oikeuksia kansioon jne.).
+* GUI-versio
